@@ -1,12 +1,214 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+-- Kenhub Egg Changer GUI (Minimal Refined Version)
+-- LocalScript inside StarterPlayerScripts
 
-]]--
+local Players = game:GetService("Players")
+local CollectionService = game:GetService("CollectionService")
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 
-local v0=game:GetService("Players");local v1=game:GetService("CollectionService");local v2=v0.LocalPlayer;local v3=v2:WaitForChild("PlayerGui");local v4={["Common Egg"]={Dog=45 -12 ,Bunny=92 -59 ,["Golden Lab"]=546 -(232 + 281) },["Uncommon Egg"]={["Black Bunny"]=1278 -(976 + 277) ,Chicken=982 -(892 + 65) ,Cat=59 -34 ,Deer=46 -21 },["Rare Egg"]={["Orange Tabby"]=33.33,["Spotted Deer"]=45 -20 ,Pig=366.67 -(87 + 263) ,Rooster=196.67000000000002 -(67 + 113) ,Monkey=27.33 -19 },["Legendary Egg"]={Cow=31.549999999999997 + 11 ,["Silver Monkey"]=102.55 -60 ,["Sea Otter"]=8.64 + 2 ,Turtle=7.13 -5 ,["Polar Bear"]=243.13 -(187 + 54) },["Mythic Egg"]={["Grey Mouse"]=989.5 -(802 + 150) ,["Brown Mouse"]=69.78999999999999 -43 ,Squirrel=18.79 + 8 ,["Red Giant Ant"]=14.93 -6 ,["Red Fox"]=0},["Bug Egg"]={Snail=67 -27 ,["Giant Ant"]=26 + 9 ,Caterpillar=1022 -(915 + 82) ,["Praying Mantis"]=0 -0 ,["Dragon Fly"]=0 + 0 },["Night Egg"]={Hedgehog=47,Mole=29.5 -6 ,Frog=7.16 + 14 ,["Echo Frog"]=1195.35 -(1069 + 118) ,["Night Owl"]=0 -0 ,Raccoon=1384 -(746 + 638) },["Bee Egg"]={Bee=147 -82 ,["Honey Bee"]=30 -10 ,["Bear Bee"]=21 -11 ,["Petal Bee"]=1 + 4 ,["Queen Bee"]=0},["Anti Bee Egg"]={Wasp=97 -42 ,["Tarantula Hawk"]=372 -(218 + 123) ,Moth=14 + 0 ,Butterfly=0 + 0 ,["Disco Bee"]=0},["Common Summer Egg"]={Starfish=841 -(368 + 423) ,Seafull=4 + 21 ,Crab=78 -53 },["Rare Summer Egg"]={Flamingo=30,Toucan=585 -(306 + 254) ,["Sea Turtle"]=38 -(10 + 8) ,Orangutan=29 -14 ,Seal=38 -28 },["Paradise Egg"]={Ostrich=485 -(416 + 26) ,Peacock=33,Capybara=16 + 8 ,["Scarlet Macaw"]=9 -6 ,["Mimic Octopus"]=1 + 0 },["Premium Night Egg"]={Hedgehog=88 -38 ,Mole=464 -(145 + 293) ,Frog=444 -(44 + 386) ,["Echo Frog"]=1496 -(998 + 488) }};local v5={["Common Egg"]=true,["Uncommon Egg"]=true,["Rare Egg"]=true,["Common Summer Egg"]=true,["Rare Summer Egg"]=true};_G.displayedEggs={};_G.getNonRepeatingRandomPet=function(v79,v80) local v81=0 + 0 ;local v82;local v83;local v84;local v85;local v86;while true do if (v81==(1 + 0)) then v83={};for v127,v128 in pairs(v82) do if (v128>(1456 -(282 + 1174))) then table.insert(v83,{pet=v127,chance=v128});end end v81=2;end if (v81==(776 -(201 + 571))) then for v129,v130 in ipairs(v83) do v86+=v130.chance if (v85<=v86) then if ((v130.pet~=v80) or (math.random()<0.3)) then return v130.pet;end end end return (v83[1139 -(116 + 1022) ] and v83[1].pet) or nil ;end if (v81==(0 -0)) then v82=v4[v79];if  not v82 then return nil;end v81=1 + 0 ;end if (v81==(2 + 0)) then v84=0 -0 ;for v131,v132 in ipairs(v83) do v84+=v132.chance end v81=10 -7 ;end if (v81==(1274 -(945 + 326))) then v85=math.random() * v84 ;v86=859 -(814 + 45) ;v81=9 -5 ;end end end;local function v6(v87,v88) local v89=0 + 0 ;local v90;local v91;while true do if (v89==(2 + 1)) then v91.TextColor3=Color3.new(701 -(271 + 429) ,886 -(261 + 624) ,1);v91.TextStrokeTransparency=0 -0 ;v91.TextScaled=true;v89=1084 -(1020 + 60) ;end if (v89==(1427 -(630 + 793))) then v91.Font=Enum.Font.Gotham;v91.Text=v88;v91.Parent=v90;v89=16 -11 ;end if (v89==(23 -18)) then v90.Parent=v87;return v90;end if (v89==(0 + 0)) then v90=Instance.new("BillboardGui");v90.Name="FakePetESP";v90.Adornee=v87:FindFirstChildWhichIsA("BasePart") or v87.PrimaryPart or v87 ;v89=1;end if (v89==(3 -2)) then v90.Size=UDim2.new(0 + 0 ,1947 -(760 + 987) ,1913 -(1789 + 124) ,816 -(745 + 21) );v90.StudsOffset=Vector3.new(0,1.5 + 1 ,529 -(406 + 123) );v90.AlwaysOnTop=true;v89=2;end if (v89==(5 -3)) then v91=Instance.new("TextLabel");v91.Size=UDim2.new(1 + 0 ,0 -0 ,1 + 0 ,1322 -(1249 + 73) );v91.BackgroundTransparency=1 + 0 ;v89=3;end end end local function v7(v92) if (v92:GetAttribute("OWNER")~=v2.Name) then return;end local v93=v92:GetAttribute("EggName");local v94=v92:GetAttribute("OBJECT_UUID");if ( not v93 or  not v94 or _G.displayedEggs[v94]) then return;end local v95,v96;if v5[v93] then v95=v93;else local v107=1055 -(87 + 968) ;while true do if (v107==0) then v96=_G.getNonRepeatingRandomPet(v93,nil);v95=v93   .. " | "   .. (v96 or "?") ;break;end end end local v97=v6(v92,v95);_G.displayedEggs[v94]={egg=v92,gui=v97,label=v97:FindFirstChild("TextLabel"),eggName=v93,lastPet=v96};end local function v8(v98) local v99=v98:GetAttribute("OBJECT_UUID");if (v99 and _G.displayedEggs[v99]) then local v108=0 -0 ;while true do if (v108==0) then _G.displayedEggs[v99].gui:Destroy();_G.displayedEggs[v99]=nil;break;end end end end for v100,v101 in v1:GetTagged("PetEggServer") do v7(v101);end v1:GetInstanceAddedSignal("PetEggServer"):Connect(v7);v1:GetInstanceRemovedSignal("PetEggServer"):Connect(v8);local v9=Instance.new("ScreenGui");v9.Name="KenhubEggChanger";v9.ResetOnSpawn=false;v9.IgnoreGuiInset=true;v9.Parent=v3;local v14=Instance.new("Frame");v14.Size=UDim2.new(0 -0 ,2100 -(106 + 1794) ,0 + 0 ,128 + 12 );v14.Position=UDim2.new(0.5 -0 , -(226 -126),1413.5 -(447 + 966) , -(191 -121));v14.BackgroundColor3=Color3.fromRGB(1837 -(1703 + 114) ,721 -(376 + 325) ,32 -12 );v14.BorderSizePixel=0 -0 ;v14.Active=true;v14.Draggable=true;v14.Parent=v9;Instance.new("UICorner",v14).CornerRadius=UDim.new(0 -0 ,3 + 7 );local v23=Instance.new("TextLabel");v23.Size=UDim2.new(2 -1 , -(99 -69),14 -(9 + 5) ,398 -(85 + 291) );v23.Position=UDim2.new(0 + 0 ,1275 -(243 + 1022) ,0,22 -16 );v23.BackgroundTransparency=1 + 0 ;v23.Text="Kenhub Egg Changer";v23.TextColor3=Color3.fromRGB(1435 -(1123 + 57) ,70 + 15 ,59 + 26 );v23.Font=Enum.Font.GothamSemibold;v23.TextSize=270 -(163 + 91) ;v23.TextXAlignment=Enum.TextXAlignment.Left;v23.Parent=v14;local v35=Instance.new("TextButton");v35.Size=UDim2.new(1930 -(1869 + 61) ,82 -60 ,0 + 0 ,77 -55 );v35.Position=UDim2.new(2 -1 , -(39 -13),0 + 0 ,2 + 4 );v35.BackgroundColor3=Color3.fromRGB(668 -(15 + 398) ,82 -22 ,60);v35.Text="X";v35.TextColor3=Color3.new(3 -2 ,1 + 0 ,1475 -(1329 + 145) );v35.Font=Enum.Font.GothamBold;v35.TextSize=985 -(140 + 831) ;v35.Parent=v14;Instance.new("UICorner",v35).CornerRadius=UDim.new(1851 -(1409 + 441) ,718 -(15 + 703) );v35.MouseButton1Click:Connect(function() v9.Enabled=false;end);local v46=true;local v47=Instance.new("TextButton");v47.Size=UDim2.new(1 + 0 , -(458 -(262 + 176)),1721 -(345 + 1376) ,714 -(198 + 490) );v47.Position=UDim2.new(0 -0 ,23 -13 ,0,19 + 17 );v47.BackgroundColor3=Color3.fromRGB(1236 -(696 + 510) ,79 -49 ,30);v47.Text="[A] Auto Stop: ON";v47.TextColor3=Color3.new(2 -1 ,1 -0 ,1263 -(1091 + 171) );v47.Font=Enum.Font.Gotham;v23.TextWrapped=true;v47.TextSize=1565 -(1126 + 425) ;v47.Parent=v14;Instance.new("UICorner",v47).CornerRadius=UDim.new(0 + 0 ,411 -(118 + 287) );v47.MouseButton1Click:Connect(function() local v103=0 -0 ;while true do if (v103==(0 -0)) then v46= not v46;v47.Text=(v46 and "[A] Auto Stop: ON") or "[A] Auto Stop: OFF" ;break;end end end);local v59=Instance.new("TextButton");v59.Size=UDim2.new(375 -(123 + 251) , -20,377 -(142 + 235) ,129 -103 );v59.Position=UDim2.new(698 -(208 + 490) ,3 + 7 ,0,6 + 62 );v59.BackgroundColor3=Color3.fromRGB(18 + 22 ,876 -(660 + 176) ,36 + 4 );v59.Text="[B] Reroll Display";v59.TextColor3=Color3.new(1 + 0 ,1 + 0 ,203 -(14 + 188) );v59.Font=Enum.Font.Gotham;v59.TextSize=14;v59.Parent=v14;Instance.new("UICorner",v59).CornerRadius=UDim.new(0 + 0 ,681 -(534 + 141) );v59.MouseButton1Click:Connect(function() for v104,v105 in pairs(_G.displayedEggs or {} ) do local v106=_G.getNonRepeatingRandomPet(v105.eggName,v105.lastPet);if (v106 and v105.label) then local v126=0 -0 ;while true do if (v126==(0 -0)) then v105.label.Text=v105.eggName   .. " | "   .. v106 ;v105.lastPet=v106;break;end end end end end);local v69=Instance.new("TextButton");v69.Size=UDim2.new(1 + 0 , -(18 + 2),0 + 0 ,45 -23 );v69.Position=UDim2.new(0 -0 ,28 -18 ,1330 -(797 + 532) , -(21 + 7));v69.BackgroundColor3=Color3.fromRGB(27 + 23 ,32 + 18 ,446 -(115 + 281) );v69.Text="? Info";v69.TextColor3=Color3.fromRGB(511 -291 ,183 + 37 ,531 -311 );v69.Font=Enum.Font.Gotham;v69.TextSize=43 -31 ;v69.Parent=v14;Instance.new("UICorner",v69).CornerRadius=UDim.new(867 -(550 + 317) ,4 + 2 );v69.MouseButton1Click:Connect(function() game:GetService("StarterGui"):SetCore("SendNotification",{Title="Info",Text="Auto Stop when found: Raccoon, Dragonfly, Queen Bee, Red Fox, Disco Bee, Butterfly.",Duration=7 -2 });end);
+-- Egg Pet Chances
+local eggChances = {
+    ["Common Egg"] = { ["Dog"] = 33, ["Bunny"] = 33, ["Golden Lab"] = 33 },
+    ["Uncommon Egg"] = { ["Black Bunny"] = 25, ["Chicken"] = 25, ["Cat"] = 25, ["Deer"] = 25 },
+    ["Rare Egg"] = { ["Orange Tabby"] = 33.33, ["Spotted Deer"] = 25, ["Pig"] = 16.67, ["Rooster"] = 16.67, ["Monkey"] = 8.33 },
+    ["Legendary Egg"] = { ["Cow"] = 42.55, ["Silver Monkey"] = 42.55, ["Sea Otter"] = 10.64, ["Turtle"] = 2.13, ["Polar Bear"] = 2.13 },
+    ["Mythic Egg"] = { ["Grey Mouse"] = 37.5, ["Brown Mouse"] = 26.79, ["Squirrel"] = 26.79, ["Red Giant Ant"] = 8.93, ["Red Fox"] = 0 },
+    ["Bug Egg"] = { ["Snail"] = 40, ["Giant Ant"] = 35, ["Caterpillar"] = 25, ["Praying Mantis"] = 0, ["Dragon Fly"] = 0 },
+    ["Night Egg"] = { ["Hedgehog"] = 47, ["Mole"] = 23.5, ["Frog"] = 21.16, ["Echo Frog"] = 8.35, ["Night Owl"] = 0, ["Raccoon"] = 0 },
+    ["Bee Egg"] = { ["Bee"] = 65, ["Honey Bee"] = 20, ["Bear Bee"] = 10, ["Petal Bee"] = 5, ["Queen Bee"] = 0 },
+    ["Anti Bee Egg"] = { ["Wasp"] = 55, ["Tarantula Hawk"] = 31, ["Moth"] = 14, ["Butterfly"] = 0, ["Disco Bee"] = 0 },
+    ["Common Summer Egg"] = { ["Starfish"] = 50, ["Seafull"] = 25, ["Crab"] = 25 },
+    ["Rare Summer Egg"] = { ["Flamingo"] = 30, ["Toucan"] = 25, ["Sea Turtle"] = 20, ["Orangutan"] = 15, ["Seal"] = 10 },
+    ["Paradise Egg"] = { ["Ostrich"] = 43, ["Peacock"] = 33, ["Capybara"] = 24, ["Scarlet Macaw"] = 3, ["Mimic Octopus"] = 1 },
+    ["Premium Night Egg"] = { ["Hedgehog"] = 50, ["Mole"] = 26, ["Frog"] = 14, ["Echo Frog"] = 10 },
+    ["Dinosaur Egg"] = { ["Raptor"] = 35, ["Triceratops"] = 32.5, ["Stegosaurus"] = 28, ["Pterodactyl"] = 3, ["Brontosaurus"] = 1, ["T-Rex"] = 0 }
+}
+
+local realESP = {
+    ["Common Egg"] = true,
+    ["Uncommon Egg"] = true,
+    ["Rare Egg"] = true,
+    ["Common Summer Egg"] = true,
+    ["Rare Summer Egg"] = true
+}
+
+_G.displayedEggs = {}
+
+function _G.getNonRepeatingRandomPet(eggName, lastPet)
+    local options = eggChances[eggName]
+    if not options then return nil end
+    local pool = {}
+    for pet, chance in pairs(options) do
+        if chance > 0 then table.insert(pool, {pet = pet, chance = chance}) end
+    end
+    local total = 0
+    for _, v in ipairs(pool) do total += v.chance end
+    local roll = math.random() * total
+    local cumulative = 0
+    for _, v in ipairs(pool) do
+        cumulative += v.chance
+        if roll <= cumulative then
+            if v.pet ~= lastPet or math.random() < 0.3 then
+                return v.pet
+            end
+        end
+    end
+    return pool[1] and pool[1].pet or nil
+end
+
+local function createEspGui(object, labelText)
+    local billboard = Instance.new("BillboardGui")
+    billboard.Name = "FakePetESP"
+    billboard.Adornee = object:FindFirstChildWhichIsA("BasePart") or object.PrimaryPart or object
+    billboard.Size = UDim2.new(0, 200, 0, 50)
+    billboard.StudsOffset = Vector3.new(0, 2.5, 0)
+    billboard.AlwaysOnTop = true
+
+    local label = Instance.new("TextLabel")
+    label.Size = UDim2.new(1, 0, 1, 0)
+    label.BackgroundTransparency = 1
+    label.TextColor3 = Color3.new(1, 1, 1)
+    label.TextStrokeTransparency = 0
+    label.TextScaled = true
+    label.Font = Enum.Font.Gotham
+    label.Text = labelText
+    label.Parent = billboard
+
+    billboard.Parent = object
+    return billboard
+end
+
+local function addESP(egg)
+    if egg:GetAttribute("OWNER") ~= LocalPlayer.Name then return end
+    local eggName = egg:GetAttribute("EggName")
+    local objectId = egg:GetAttribute("OBJECT_UUID")
+    if not eggName or not objectId or _G.displayedEggs[objectId] then return end
+
+    local labelText, firstPet
+    if realESP[eggName] then
+        labelText = eggName
+    else
+        firstPet = _G.getNonRepeatingRandomPet(eggName, nil)
+        labelText = eggName .. " | " .. (firstPet or "?")
+    end
+
+    local espGui = createEspGui(egg, labelText)
+    _G.displayedEggs[objectId] = {
+        egg = egg,
+        gui = espGui,
+        label = espGui:FindFirstChild("TextLabel"),
+        eggName = eggName,
+        lastPet = firstPet
+    }
+end
+
+local function removeESP(egg)
+    local objectId = egg:GetAttribute("OBJECT_UUID")
+    if objectId and _G.displayedEggs[objectId] then
+        _G.displayedEggs[objectId].gui:Destroy()
+        _G.displayedEggs[objectId] = nil
+    end
+end
+
+for _, egg in CollectionService:GetTagged("PetEggServer") do
+    addESP(egg)
+end
+CollectionService:GetInstanceAddedSignal("PetEggServer"):Connect(addESP)
+CollectionService:GetInstanceRemovedSignal("PetEggServer"):Connect(removeESP)
+
+-- GUI
+local gui = Instance.new("ScreenGui")
+gui.Name = "KenhubEggChanger"
+gui.ResetOnSpawn = false
+gui.IgnoreGuiInset = true
+gui.Parent = PlayerGui
+
+local main = Instance.new("Frame")
+main.Size = UDim2.new(0, 200, 0, 140)
+main.Position = UDim2.new(0.5, -100, 0.5, -70)
+main.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+main.BorderSizePixel = 0
+main.Active = true
+main.Draggable = true
+main.Parent = gui
+Instance.new("UICorner", main).CornerRadius = UDim.new(0, 10)
+
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, -30, 0, 22)
+title.Position = UDim2.new(0, 10, 0, 6)
+title.BackgroundTransparency = 1
+title.Text = "Kenhub Egg Changer"
+title.TextColor3 = Color3.fromRGB(255, 85, 85)
+title.Font = Enum.Font.GothamSemibold
+title.TextSize = 16
+title.TextXAlignment = Enum.TextXAlignment.Left
+title.Parent = main
+
+local closeBtn = Instance.new("TextButton")
+closeBtn.Size = UDim2.new(0, 22, 0, 22)
+closeBtn.Position = UDim2.new(1, -26, 0, 6)
+closeBtn.BackgroundColor3 = Color3.fromRGB(255, 60, 60)
+closeBtn.Text = "X"
+closeBtn.TextColor3 = Color3.new(1,1,1)
+closeBtn.Font = Enum.Font.GothamBold
+closeBtn.TextSize = 14
+closeBtn.Parent = main
+Instance.new("UICorner", closeBtn).CornerRadius = UDim.new(1, 0)
+closeBtn.MouseButton1Click:Connect(function()
+    gui.Enabled = false
+end)
+
+local autoStop = true
+local stopBtn = Instance.new("TextButton")
+stopBtn.Size = UDim2.new(1, -20, 0, 26)
+stopBtn.Position = UDim2.new(0, 10, 0, 36)
+stopBtn.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+stopBtn.Text = "[A] Auto Stop: ON"
+stopBtn.TextColor3 = Color3.new(1,1,1)
+stopBtn.Font = Enum.Font.Gotham
+title.TextWrapped = true
+stopBtn.TextSize = 14
+stopBtn.Parent = main
+Instance.new("UICorner", stopBtn).CornerRadius = UDim.new(0, 6)
+stopBtn.MouseButton1Click:Connect(function()
+    autoStop = not autoStop
+    stopBtn.Text = autoStop and "[A] Auto Stop: ON" or "[A] Auto Stop: OFF"
+end)
+
+local rerollBtn = Instance.new("TextButton")
+rerollBtn.Size = UDim2.new(1, -20, 0, 26)
+rerollBtn.Position = UDim2.new(0, 10, 0, 68)
+rerollBtn.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+rerollBtn.Text = "[B] Reroll Display"
+rerollBtn.TextColor3 = Color3.new(1,1,1)
+rerollBtn.Font = Enum.Font.Gotham
+rerollBtn.TextSize = 14
+rerollBtn.Parent = main
+Instance.new("UICorner", rerollBtn).CornerRadius = UDim.new(0, 6)
+rerollBtn.MouseButton1Click:Connect(function()
+    for objectId, data in pairs(_G.displayedEggs or {}) do
+        local pet = _G.getNonRepeatingRandomPet(data.eggName, data.lastPet)
+        if pet and data.label then
+            data.label.Text = data.eggName .. " | " .. pet
+            data.lastPet = pet
+        end
+    end
+end)
+
+local infoBtn = Instance.new("TextButton")
+infoBtn.Size = UDim2.new(1, -20, 0, 22)
+infoBtn.Position = UDim2.new(0, 10, 1, -28)
+infoBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+infoBtn.Text = "? Info"
+infoBtn.TextColor3 = Color3.fromRGB(220,220,220)
+infoBtn.Font = Enum.Font.Gotham
+infoBtn.TextSize = 12
+infoBtn.Parent = main
+Instance.new("UICorner", infoBtn).CornerRadius = UDim.new(0, 6)
+infoBtn.MouseButton1Click:Connect(function()
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Info",
+        Text = "Auto Stop when found: Raccoon, Dragonfly, Queen Bee, Red Fox, Disco Bee, Butterfly, T-Rex.",
+        Duration = 5
+    })
+end)
